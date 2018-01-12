@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="se-card:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/se_card_war</output-path>
+    <root id="archive" name="se-card_war.war">
+      <element id="artifact" artifact-name="se-card:war exploded" />
+    </root>
+  </artifact>
+</component>
