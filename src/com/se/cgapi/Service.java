@@ -21,7 +21,7 @@ public class Service extends Application{
     public String helloWorld(){
 
         JsonObject result = new JsonObject();
-        result.addProperty("number", 99);
+        result.addProperty("number", 123);
 
         return result.toString();
     }
