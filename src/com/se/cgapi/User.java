@@ -36,6 +36,8 @@ public class User {
                 if(pw.equals(p)){
                     result.addProperty("ok", true);
                     result.addProperty("username", n);
+                    result.addProperty("name", (String)cursor.one().get("name"));
+                    result.addProperty("lastname", (String)cursor.one().get("lastname"));
                 }else {
                     result.addProperty("ok", false);
                     result.addProperty("err", "Incorrect password.");
