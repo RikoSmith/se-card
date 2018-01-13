@@ -18,5 +18,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.1 - RESTful Web Service" level="application_server_libraries" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.1" level="application_server_libraries" />
+    <orderEntry type="library" name="mongo-java-driver-3.6.1" level="application" />
+    <orderEntry type="library" name="mongodb-driver-core-3.6.1" level="application" />
+    <orderEntry type="library" name="bson-3.6.1" level="application" />
+    <orderEntry type="library" name="gson-2.8.2" level="application" />
   </component>
 </module>
