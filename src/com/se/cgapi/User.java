@@ -38,6 +38,8 @@ public class User {
                     result.addProperty("username", n);
                     result.addProperty("name", (String)cursor.one().get("name"));
                     result.addProperty("lastname", (String)cursor.one().get("lastname"));
+                    result.addProperty("email", (String)cursor.one().get("email"));
+                    result.addProperty("password", (String)cursor.one().get("pword"));
                 }else {
                     result.addProperty("ok", false);
                     result.addProperty("err", "Incorrect password.");
@@ -47,6 +49,11 @@ public class User {
 
         return result.toString();
 
+    }
+
+
+    public String signUp(String uname, String pass, String pass2, String name, String lastname, String email){
+        return "Stub!";
     }
 
 }
