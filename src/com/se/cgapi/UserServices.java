@@ -113,6 +113,7 @@ public class UserServices {
 
         Document query = new Document();
         query.put("username", uname);
+        
         FindIterable res = USERS.find(query);
         MongoCursor cursor = res.iterator();
 
