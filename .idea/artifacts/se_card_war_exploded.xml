@@ -7,6 +7,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="se-card" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="gson-2.8.2" />
+          <element id="library" level="application" name="bson-3.6.1" />
+          <element id="library" level="application" name="mongodb-driver-core-3.6.1" />
+          <element id="library" level="application" name="mongo-java-driver-3.6.1" />
+        </element>
       </element>
     </root>
   </artifact>

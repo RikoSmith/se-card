@@ -3,6 +3,14 @@
     <output-path>$PROJECT_DIR$/out/artifacts/se_card_war</output-path>
     <root id="archive" name="se-card_war.war">
       <element id="artifact" artifact-name="se-card:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="gson-2.8.2" />
+          <element id="library" level="application" name="bson-3.6.1" />
+          <element id="library" level="application" name="mongodb-driver-core-3.6.1" />
+          <element id="library" level="application" name="mongo-java-driver-3.6.1" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>
