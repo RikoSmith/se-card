@@ -1,4 +1,9 @@
 # se-card
+
+## Demo: ##
+
+  http://138.68.108.162:8080/cg-service/api/v1/
+
 ## Documentation: ##
 
 ### POST /login ###
