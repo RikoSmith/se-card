@@ -63,20 +63,37 @@ public class UserServices {
     }
 
     //---Handles sign up
-    //
+    //  Google OAuth 2.0 credentials:
+    //  Client ID: 754560524206-n4vo5fteruh5kiuaf09sth4ghevj2aau.apps.googleusercontent.com
+    //  Secret ID: 8hkJqWQIgENmtpxdgKBhJ1PH
     //
     // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String signUp(String uname, String pass, String pass2, String name, String lastname, String email){
+    public String signUp(String uname, String pass, String name, String lastname, String email){
+
         JsonObject result = new JsonObject();
 
-        DBObject newUser = new BasicDBObject();
 
+        //pass = pass.decodeFromCache
 
+        Document newUser = new Document();
+        newUser.append("username", uname);
+        newUser.append("pword", pass);
+        newUser.append("name", name);
+        newUser.append("lastname", lastname);
+        newUser.append("email", email);
 
+        try{
+            USERS.insertOne(newUser);
 
-        //WriteResult res = USERS.insertOne();
+            result.addProperty("ok", true);
+            result.addProperty("newuser", uname);
+        }catch (Exception e){
+            result.addProperty("ok", false);
+            result.addProperty("err", e.toString());
+        }
 
         return result.toString();
+
     }
 
     //---Checks if there is a user with the same email registered.
@@ -113,7 +130,7 @@ public class UserServices {
 
         Document query = new Document();
         query.put("username", uname);
-        
+
         FindIterable res = USERS.find(query);
         MongoCursor cursor = res.iterator();
 
