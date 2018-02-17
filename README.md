@@ -1,7 +1,10 @@
 # se-card
-Documentation:
+## Documentation: ##
 
-<h3>POST /login</h3>
+### POST /login ###
+  Description:
+    
+    Kinda signs in user to the system
 
   Request params:
   
@@ -10,20 +13,33 @@ Documentation:
 
   Response:
 
-    - If successful: JSON: {"ok": true, "username": [username], "name", [name], "lastname": [lastname], "email": [email]}
-    - Else:JSON: {"ok": false, "err":[Error message]}
+    - Success: JSON: {"ok": true, "username": [username], "name", [name], "lastname": [lastname], "email": [email]}
+    - Fail:JSON: {"ok": false, "err":[Error message]}
 
   Comments: 
 
     - No comments
      
-POST /register
-    Request params:
-      username: Username to resiter
-      pword: Password 
-      name: Name to register
-      lastname: Lastname to register
-      email: Email to register
-      
+### POST /register ###
+  Description:
+  
+    Registers new user to the system
+
+  Request params:
     
-    
+    1. username: Username to resiter
+    2. pword: Password 
+    3. name: Name to register
+    4. lastname: Lastname to register
+    5. email: Email to register
+  
+  Response:
+  
+    - Success: JSON: {"ok": true, "newuser": [Username of registered user]}
+    - Fail: JSON: {"ok": false, "err": [Error message]}
+   
+  Comments:
+  
+    - Before using this resource one should check existense of a user with the same email and username to avoid 
+      duplicate entries (though database level won't allow it). There are two methods described below that one
+      should use to implement such behavior.
