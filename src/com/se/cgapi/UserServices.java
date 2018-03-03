@@ -10,12 +10,13 @@ import org.bson.BSONObject;
 import org.bson.BsonDocument;
 import org.bson.Document;
 
+import java.security.MessageDigest;
+
 public class UserServices {
 
     //Database Connection
     private MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://admin:Zxc123654@ds247007.mlab.com:47007/se-cardgame"));
     private MongoDatabase db = mongoClient.getDatabase("se-cardgame");
-    //private MongoCredential credential = MongoCredential.createCredential("admin", "se-cardgame", "Zxc123654".toCharArray());
 
     //Collections
     //private MongoCollection<Document> USERS = db.getCollection("users");
@@ -33,7 +34,7 @@ public class UserServices {
         JsonObject result = new JsonObject();
 
         Document query = new Document();
-        query.put("email", u);
+        query.put("username", u);
         FindIterable res = USERS.find(query);
         MongoCursor cursor = res.iterator();
         if(!cursor.hasNext()){
@@ -47,10 +48,8 @@ public class UserServices {
                 if(pw.equals(p)){
                     result.addProperty("ok", true);
                     result.addProperty("username", n);
-                    result.addProperty("name", (String)jo.get("name"));
                     result.addProperty("lastname", (String)jo.get("lastname"));
                     result.addProperty("email", (String)jo.get("email"));
-                    result.addProperty("password", (String)jo.get("pword"));
                 }else {
                     result.addProperty("ok", false);
                     result.addProperty("err", "Incorrect password.");
