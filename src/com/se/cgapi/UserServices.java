@@ -1,5 +1,6 @@
 package com.se.cgapi;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.mongodb.*;
 import com.mongodb.client.FindIterable;
@@ -11,19 +12,32 @@ import org.bson.BsonDocument;
 import org.bson.Document;
 
 import java.security.MessageDigest;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 
 public class UserServices {
 
     //Database Connection
-    private MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://admin:Zxc123654@ds247007.mlab.com:47007/se-cardgame"));
-    private MongoDatabase db = mongoClient.getDatabase("se-cardgame");
+    private final MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://admin:Zxc123654@ds247007.mlab.com:47007/se-cardgame"));
+    private final MongoDatabase db = mongoClient.getDatabase("se-cardgame");
+    private final Gson gson = new Gson();
 
     //Collections
     //private MongoCollection<Document> USERS = db.getCollection("users");
     private MongoCollection USERS = db.getCollection("users");
+    private Logger logger = Logger.getLogger(getClass().getName());
+
+    //List of logged users
+    public static final List<_SessionPair> activeUsers = new ArrayList<>();
+
+    //Random String generator
+    private final RandomString gen;
 
     public UserServices(){
-
+        gen = new RandomString(32);
     }
 
     //---Handles signin in
@@ -50,6 +64,9 @@ public class UserServices {
                     result.addProperty("username", n);
                     result.addProperty("lastname", (String)jo.get("lastname"));
                     result.addProperty("email", (String)jo.get("email"));
+                    String key = this.addActiveUser(n);
+                    logger.info(activeUsers.toString());
+                    result.addProperty("sessKey", key);
                 }else {
                     result.addProperty("ok", false);
                     result.addProperty("err", "Incorrect password.");
@@ -145,5 +162,29 @@ public class UserServices {
 
         return result.toString();
     }
+
+
+    public String addActiveUser(String user){
+        String key = gen.nextString();
+        logger.info("ADDED/ Added new active user user");
+        activeUsers.add(new _SessionPair(key, user));
+        return key.toString();
+    }
+
+    public boolean removeActiveUser(String user, String key){
+        return activeUsers.remove(new _SessionPair(key, user));
+    }
+
+    public String getActiveUserList(){
+        List<String> list = new ArrayList<>();
+        logger.info("getAct" + activeUsers.toString());
+        for(_SessionPair s : activeUsers){
+            logger.info("getAct" + activeUsers.toString());
+            list.add(s.getUsername());
+        }
+        return gson.toJson(list);
+    }
+
+
 
 }

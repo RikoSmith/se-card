@@ -18,6 +18,7 @@ import javax.xml.ws.WebServiceException;
 import javax.xml.ws.handler.MessageContext;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 
 @Path("/v1")
@@ -27,6 +28,9 @@ public class Service extends Application{
     @Context
     private HttpServletRequest httpRequest;
 
+    @Resource
+    WebServiceContext wsContext;
+
 
 
 
@@ -34,27 +38,14 @@ public class Service extends Application{
 
     //Test operation
     @GET
-    @Path("/helloWorld")
+    @Path("/test")
     @Produces(MediaType.APPLICATION_JSON)
-    public String helloWorld(){
+    public String helloWorld(@Context HttpServletRequest req){
 
         JsonObject result = new JsonObject();
-        HttpSession sess = httpRequest.getSession();
-        if (sess == null)
-            throw new WebServiceException("No HTTP Session found");
-        Integer times = (Integer) sess.getAttribute("times");
-        if(times != null){
-            result.addProperty("times", times);
-            sess.setAttribute("times", times+1);
-        }else {
-            result.addProperty("times", 1);
-            sess.setAttribute("times", 1);
-            sess.setAttribute("num", 43);
-        }
 
 
-
-
+        result.addProperty("ip", req.getRemoteAddr());
 
         return result.toString();
     }
@@ -64,8 +55,6 @@ public class Service extends Application{
     @Path("/login")
     @Produces(MediaType.APPLICATION_JSON)
     public String login(@FormParam("username") String uname, @FormParam("pword") String password){
-
-
 
         return u.login(uname, password);
 
@@ -99,4 +88,17 @@ public class Service extends Application{
 
     }
 
+    @GET
+    @Path("/getActiveUsers")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getActUsers(){
+
+        JsonObject result = new JsonObject();
+        result.addProperty("ok", true);
+        String l = u.getActiveUserList();
+        result.addProperty("users", l);
+
+        return result.toString();
+
+    }
 }
