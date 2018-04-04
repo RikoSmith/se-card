@@ -16,17 +16,42 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.1 - RESTful Web Service" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.1" level="application_server_libraries" />
-    <orderEntry type="library" name="mongo-java-driver-3.6.1" level="application" />
-    <orderEntry type="library" name="mongodb-driver-core-3.6.1" level="application" />
-    <orderEntry type="library" name="bson-3.6.1" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 5.0.0 - JSON Processing (JSR 353)" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 5.0.0 - JSON Binding" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 5.0.0 - RESTful Web Service" level="application_server_libraries" />
-    <orderEntry type="library" name="javax.ws.rs-api-2.1" level="project" />
-    <orderEntry type="library" name="gson-2.8.2" level="project" />
-    <orderEntry type="library" name="servlet-api-2.5" level="project" />
-    <orderEntry type="library" name="mongo-java-driver-3.6.3" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/bson-3.6.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/gson-2.8.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/mongo-java-driver-3.6.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/mongodb-driver-core-3.6.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="bson-3.6.1" level="project" />
   </component>
 </module>
