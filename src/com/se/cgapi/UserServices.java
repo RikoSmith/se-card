@@ -11,6 +11,8 @@ import org.bson.BSONObject;
 import org.bson.BsonDocument;
 import org.bson.Document;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.security.MessageDigest;
 import java.util.logging.Logger;
 import java.util.ArrayList;
@@ -44,34 +46,41 @@ public class UserServices {
     //
     //
     // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String login(String u, String pw){
+    public String login(String u, String pw, HttpSession sess){
         JsonObject result = new JsonObject();
 
-        Document query = new Document();
-        query.put("username", u);
-        FindIterable res = USERS.find(query);
-        MongoCursor cursor = res.iterator();
-        if(!cursor.hasNext()){
-            result.addProperty("ok", false);
-            result.addProperty("err", "User with such username does not exist.");
-        }else {
-            Document jo = (Document)cursor.next();
-            String n = (String)jo.get("username");
-            if (n.equals(u)){
-                String p = (String)jo.get("pword");
-                if(pw.equals(p)){
-                    result.addProperty("ok", true);
-                    result.addProperty("username", n);
-                    result.addProperty("lastname", (String)jo.get("lastname"));
-                    result.addProperty("email", (String)jo.get("email"));
-                    String key = this.addActiveUser(n);
-                    logger.info(activeUsers.toString());
-                    result.addProperty("sessKey", key);
-                }else {
-                    result.addProperty("ok", false);
-                    result.addProperty("err", "Incorrect password.");
+
+        if((int)sess.getAttribute("is_logged") != 1) {
+            Document query = new Document();
+            query.put("username", u);
+            FindIterable res = USERS.find(query);
+            MongoCursor cursor = res.iterator();
+            if (!cursor.hasNext()) {
+                result.addProperty("ok", false);
+                result.addProperty("err", "User with such username does not exist.");
+            } else {
+                Document jo = (Document) cursor.next();
+                String n = (String) jo.get("username");
+                if (n.equals(u)) {
+                    String p = (String) jo.get("pword");
+                    if (pw.equals(p)) {
+                        result.addProperty("ok", true);
+                        result.addProperty("username", n);
+                        result.addProperty("lastname", (String) jo.get("lastname"));
+                        result.addProperty("email", (String) jo.get("email"));
+                        String key = this.addActiveUser(n);
+                        logger.info(activeUsers.toString());
+                        result.addProperty("sessKey", key);
+                        sess.setAttribute("is_logged", 1);
+                    } else {
+                        result.addProperty("ok", false);
+                        result.addProperty("err", "Incorrect password.");
+                    }
                 }
             }
+        }else {
+            result.addProperty("ok", false);
+            result.addProperty("err", "User is alredy logged in.");
         }
 
         return result.toString();

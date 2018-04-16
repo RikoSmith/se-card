@@ -19,6 +19,7 @@ import javax.xml.ws.handler.MessageContext;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.logging.Logger;
 
 
 @Path("/v1")
@@ -31,6 +32,7 @@ public class Service extends Application{
     @Resource
     WebServiceContext wsContext;
 
+    private Logger logger = Logger.getLogger(getClass().getName());
 
 
 
@@ -47,6 +49,7 @@ public class Service extends Application{
 
         result.addProperty("ip", req.getRemoteAddr());
 
+
         return result.toString();
     }
 
@@ -54,11 +57,34 @@ public class Service extends Application{
     @POST
     @Path("/login")
     @Produces(MediaType.APPLICATION_JSON)
-    public String login(@FormParam("username") String uname, @FormParam("pword") String password){
+    public String login(@FormParam("username") String uname, @FormParam("pword") String password, @Context HttpServletRequest req){
+        HttpSession session = req.getSession();
+        if(session.getAttribute("is_logged") != null){
+            logger.info("SESSION_K: " + session.getAttribute("is_logged"));
+        }else {
+            session.setAttribute("is_logged", 0);
+        }
 
-        return u.login(uname, password);
+        return u.login(uname, password, session);
 
     }
+
+    //Login
+    //Only for cookie testing, FORBIDDEN through GET
+    /*@GET
+    @Path("/login")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String login2(@QueryParam("username") String uname, @QueryParam("pword") String password, @Context HttpServletRequest req){
+        HttpSession session = req.getSession();
+        if(session.getAttribute("is_logged") != null){
+            logger.info("SESSION_K: " + session.getAttribute("is_logged"));
+        }else {
+            session.setAttribute("is_logged", 0);
+        }
+
+        return u.login(uname, password, session);
+
+    }*/
 
     @POST
     @Path("/register")
