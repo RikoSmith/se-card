@@ -157,7 +157,7 @@ public class Service extends Application{
     }
 
     @GET
-    @Path("/login")
+    @Path("/logout")
     @Produces(MediaType.APPLICATION_JSON)
     public String logout(@Context HttpServletRequest req){
         HttpSession session = req.getSession();
