@@ -10,11 +10,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war/se-card_war.war" afterPath="$PROJECT_DIR$/out/artifacts/se_card_war/se-card_war.war" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/Service.class" afterPath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/Service.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/UserServices.class" afterPath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/UserServices.class" />
       <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/Service.class" afterPath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/Service.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/UserServices.class" afterPath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/UserServices.class" />
+      <change beforePath="$PROJECT_DIR$/se-card.iml" afterPath="$PROJECT_DIR$/se-card.iml" />
+      <change beforePath="$PROJECT_DIR$/src/com/se/cgapi/CardServices.java" afterPath="$PROJECT_DIR$/src/com/se/cgapi/CardServices.java" />
       <change beforePath="$PROJECT_DIR$/src/com/se/cgapi/Service.java" afterPath="$PROJECT_DIR$/src/com/se/cgapi/Service.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/se/cgapi/UserServices.java" afterPath="$PROJECT_DIR$/src/com/se/cgapi/UserServices.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Service.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="79" column="75" lean-forward="true" selection-start-line="79" selection-start-column="75" selection-end-line="79" selection-end-column="75" />
+            <state relative-caret-position="-572">
+              <caret line="96" column="20" lean-forward="true" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,12 +99,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardServices.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CardServices.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/CardServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="480">
+              <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,8 +114,8 @@
       <file leaf-file-name="UserServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/UserServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="27" column="41" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="32" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1353#1354#0" expanded="true" />
@@ -169,11 +170,13 @@
         <option value="$PROJECT_DIR$/src/com/se/cgapi/User.java" />
         <option value="$PROJECT_DIR$/src/com/se/cgapi/GameBoard.java" />
         <option value="$PROJECT_DIR$/src/com/se/cgapi/GameServices.java" />
-        <option value="$PROJECT_DIR$/src/com/se/cgapi/CardServices.java" />
         <option value="$PROJECT_DIR$/src/com/se/cgapi/RandomString.java" />
         <option value="$PROJECT_DIR$/src/com/se/cgapi/_SessionPair.java" />
         <option value="$PROJECT_DIR$/src/com/se/cgapi/UserServices.java" />
+        <option value="$PROJECT_DIR$/src/oauth/Google2APi.java" />
+        <option value="$PROJECT_DIR$/src/oauth/Google2Api.java" />
         <option value="$PROJECT_DIR$/src/com/se/cgapi/Service.java" />
+        <option value="$PROJECT_DIR$/src/com/se/cgapi/CardServices.java" />
       </list>
     </option>
   </component>
@@ -230,8 +233,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane">
         <subPane>
@@ -244,6 +245,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,6 +290,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/oauth" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
@@ -570,7 +574,9 @@
       <workItem from="1523021992079" duration="144000" />
       <workItem from="1523007742360" duration="101000" />
       <workItem from="1523890031528" duration="1252000" />
-      <workItem from="1523869839394" duration="2003000" />
+      <workItem from="1523869839394" duration="2532000" />
+      <workItem from="1523874549605" duration="5319000" />
+      <workItem from="1523965762995" duration="480000" />
     </task>
     <task id="LOCAL-00001" summary="Added search (helper) methods for auth">
       <created>1518346662924</created>
@@ -611,7 +617,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55983000" />
+    <option name="totallyTimeSpent" value="62311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="300" y="52" width="1831" height="1089" extended-state="6" />
@@ -619,7 +625,6 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -628,8 +633,8 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36122882" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36122882" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838982" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -645,6 +650,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838982" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -672,7 +678,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/User.java" />
     <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -989,14 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/CardServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/RandomString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1023,10 +1020,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/oauth/Google2Api.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-572">
+          <caret line="96" column="20" lean-forward="true" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/UserServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="27" column="41" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="32" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1353#1354#0" expanded="true" />
@@ -1037,18 +1053,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/User.java">
+    <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/CardServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="79" column="75" lean-forward="true" selection-start-line="79" selection-start-column="75" selection-end-line="79" selection-end-column="75" />
+        <state relative-caret-position="480">
+          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,24 +1,21 @@
 package com.se.cgapi;
 
 
+import com.github.scribejava.apis.GoogleApi20;
+import com.github.scribejava.core.builder.ServiceBuilder;
+import com.github.scribejava.core.oauth.OAuth20Service;
 import com.google.gson.JsonObject;
-import com.sun.deploy.net.HttpRequest;
+import com.se.cgapi.services.UserServices;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.xml.ws.WebServiceContext;
-import javax.xml.ws.WebServiceException;
-import javax.xml.ws.handler.MessageContext;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.List;
 import java.util.logging.Logger;
 
 
@@ -85,6 +82,35 @@ public class Service extends Application{
         return u.login(uname, password, session);
 
     }*/
+
+
+    @GET
+    @Path("/goauth")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String googleAuth(@Context HttpServletRequest req, @Context HttpServletResponse res){
+
+
+        ServiceBuilder builder = new ServiceBuilder("");
+
+        final OAuth20Service service = new ServiceBuilder("33969162692-4555s1e38op24e285gqecob95lj76rhn.apps.googleusercontent.com")
+                .apiSecret("1wJ1kaOadFpbqY0FcJGZCJyk").callback("http://localhost:3000/oauth2callback").build(GoogleApi20.instance());
+
+        HttpSession sess = req.getSession();
+
+        sess.setAttribute("goauth", service);
+        String url =  service.getAuthorizationUrl();
+
+
+
+        try{
+            res.sendRedirect(url);
+        }catch (Exception e){
+            return e.getMessage();
+        }
+
+        return "Hi";
+    }
+
 
     @POST
     @Path("/register")

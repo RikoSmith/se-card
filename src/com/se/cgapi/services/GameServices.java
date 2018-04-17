@@ -1,4 +1,4 @@
-package com.se.cgapi;
+package com.se.cgapi.services;
 
 public class GameServices {
 
