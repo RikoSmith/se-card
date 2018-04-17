@@ -11,6 +11,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class CardServices {
     private Logger logger = Logger.getLogger(getClass().getName());
 
     public String getCard(String id){
-        JsonObject result = new JsonObject();
+        Document result = new Document();
 
         Document query = new Document();
         query.put("id", Integer.parseInt(id));
@@ -38,30 +39,37 @@ public class CardServices {
         MongoCursor cursor = res.iterator();
 
         if (!cursor.hasNext()) {
-            result.addProperty("ok", false);
-            result.addProperty("err", "Card with such id does not exist.");
+            result.append("ok", false);
+            result.append("err", "Card with such id does not exist.");
         } else {
             Document jo = (Document) cursor.next();
-            return jo.toJson().toString();
+            result.append("ok", true);
+            result.append("card", jo);
+
         }
 
-        return result.toString();
+        return result.toJson();
 
     }
 
     public String getAllCards(){
+        Document result = new Document();
+
         Document query = new Document();
         FindIterable res = CARDS.find(query);
         MongoCursor cursor = res.iterator();
 
-        List<String> all = new ArrayList<>();
+        List<Document> all = new ArrayList<>();
 
         while (cursor.hasNext()){
             Document jo = (Document) cursor.next();
-            all.add(jo.toJson());
+            all.add(jo);
         }
 
-        return all.toString();
+        result.append("ok", true);
+        result.append("data", all);
+
+        return result.toJson();
 
     }
 
