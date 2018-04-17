@@ -32,8 +32,6 @@ public class Service extends Application{
 
     private Logger logger = Logger.getLogger(getClass().getName());
 
-
-
     private UserServices u = new UserServices();
     private CardServices c = new CardServices();
 
@@ -52,6 +50,8 @@ public class Service extends Application{
         return result.toString();
     }
 
+    ////////--USER SERVICES--////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Login
     @POST
     @Path("/login")
@@ -156,8 +156,20 @@ public class Service extends Application{
 
     }
 
+    @GET
+    @Path("/login")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String logout(@Context HttpServletRequest req){
+        HttpSession session = req.getSession();
 
-    ////////--CARD SERVICE--////////////////////////////////////////////////////////////////////////////////////////////
+        session.invalidate();
+
+        return "{\"ok\": true, \"message\": \"You successfully logged out\"}";
+
+    }
+
+
+    ////////--CARD SERVICES--////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @GET
     @Path("/getCard")

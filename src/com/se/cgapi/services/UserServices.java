@@ -10,7 +10,6 @@ import com.mongodb.client.MongoDatabase;
 import com.se.cgapi.utils.RandomString;
 import com.se.cgapi.utils._SessionPair;
 import org.bson.Document;
-
 import javax.servlet.http.HttpSession;
 import java.util.logging.Logger;
 import java.util.ArrayList;
