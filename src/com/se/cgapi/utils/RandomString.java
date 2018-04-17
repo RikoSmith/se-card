@@ -1,4 +1,4 @@
-package com.se.cgapi;
+package com.se.cgapi.utils;
 
 import java.security.SecureRandom;
 import java.util.Locale;

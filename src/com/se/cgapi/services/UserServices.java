@@ -7,19 +7,14 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
-import com.se.cgapi.RandomString;
-import com.se.cgapi._SessionPair;
-import org.bson.BSONObject;
-import org.bson.BsonDocument;
+import com.se.cgapi.utils.RandomString;
+import com.se.cgapi.utils._SessionPair;
 import org.bson.Document;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.security.MessageDigest;
 import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 
 public class UserServices {

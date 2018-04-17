@@ -1,4 +1,4 @@
-package com.se.cgapi;
+package com.se.cgapi.models;
 
 public class GameBoard {
 

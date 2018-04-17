@@ -1,4 +1,4 @@
-package com.se.cgapi;
+package com.se.cgapi.utils;
 
 public class _SessionPair {
 
