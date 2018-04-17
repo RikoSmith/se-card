@@ -5,6 +5,7 @@ import com.github.scribejava.apis.GoogleApi20;
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.oauth.OAuth20Service;
 import com.google.gson.JsonObject;
+import com.se.cgapi.services.CardServices;
 import com.se.cgapi.services.UserServices;
 
 import javax.annotation.Resource;
@@ -34,6 +35,7 @@ public class Service extends Application{
 
 
     private UserServices u = new UserServices();
+    private CardServices c = new CardServices();
 
     //Test operation
     @GET
@@ -153,4 +155,24 @@ public class Service extends Application{
         return result.toString();
 
     }
+
+
+    ////////--CARD SERVICE--////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @GET
+    @Path("/getCard")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getCard(@QueryParam("id") String id){
+        return c.getCard(id);
+    }
+
+
+    @GET
+    @Path("/getAllCards")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getAllCard(){
+        return c.getAllCards();
+    }
+
+
 }
