@@ -145,25 +145,31 @@
     
   Response:
   
-    - Success: JSON: {"ok": true, "card":{
-    "_id": {
-        "$oid": "5ad6602f734d1d7f2372932c"
-    },
-    "name": "SHSS female student",
-    "id": 3,
-    "mana": 2,
-    "attack": 2,
-    "defence": 3,
-    "battlecry": {
-        "self_hero": "+5"
-    },
-    "school": "SHSS",
-    "description": "In the beggining of your turn restores 1 health to your hero"
-}}
+    - Success: JSON: {"ok": true, "card": [Card instance]}
     - Fail: JSON: {"ok": false, "err": [Error message]}
     
   Comments:
   
-    - Invalidates session of a user
+    - Retreives card instance from database
+    
+    
+### GET /getAllCards ###
+
+  Description: 
+  
+    Returns all the cards
+    
+  Request params:
+    
+    No param
+    
+  Response:
+  
+    - Success: JSON: {"ok": true, "data": [Array of cards]}
+    - Fail: JSON: {"ok": false, "err": [Error message]}
+    
+  Comments:
+  
+    - Retreives all card instances from database
       
 
