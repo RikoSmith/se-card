@@ -69,3 +69,101 @@
     - It is a helper function that should be used to verify existence of user with the same email during 
       filling sign up form (using ajax).
       
+ 
+### GET /searchUsername ###
+
+  Description: 
+  
+    Searches for username in the system
+    
+  Request params:
+    
+    1. uname: Username that will be searched
+    
+  Response:
+  
+    - Success: JSON: {"ok": true, "username":[Username that searhced]}
+    - Fail: JSON: {"ok": false, "err": [Error message]}
+    
+  Comments:
+  
+    - It is a helper function that should be used to verify existence of user with the same username during 
+      filling sign up form (using ajax).
+      
+      
+### GET /getActiveUsers ###
+
+  Description: 
+  
+    Gets all logged users in the system
+    
+  Request params:
+    
+    No params
+    
+  Response:
+  
+    - Success: JSON: {"ok": true, "users":[Array of usernames]}
+    - Fail: JSON: {"ok": false, "err": [Error message]}
+    
+  Comments:
+  
+    - Everytime user logges in his name is added to the list of activeUsers
+    
+    
+    
+### GET /logout ###
+
+  Description: 
+  
+    Loges out the user
+    
+  Request params:
+    
+    No params
+    
+  Response:
+  
+    - Success: JSON: {"ok": true, "users":[Success message]}
+    - Fail: JSON: {"ok": false, "err": [Error message]}
+    
+  Comments:
+  
+    - Invalidates session of a user
+    
+    
+    
+### GET /getCard ###
+
+  Description: 
+  
+    Returns the card JSON object
+    
+  Request params:
+    
+    1. id: id of the card
+    
+  Response:
+  
+    - Success: JSON: {"ok": true, "card":{
+    "_id": {
+        "$oid": "5ad6602f734d1d7f2372932c"
+    },
+    "name": "SHSS female student",
+    "id": 3,
+    "mana": 2,
+    "attack": 2,
+    "defence": 3,
+    "battlecry": {
+        "self_hero": "+5"
+    },
+    "school": "SHSS",
+    "description": "In the beggining of your turn restores 1 health to your hero"
+}}
+    - Fail: JSON: {"ok": false, "err": [Error message]}
+    
+  Comments:
+  
+    - Invalidates session of a user
+      
+
