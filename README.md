@@ -202,4 +202,25 @@
   
     - Requires player to be logged in.
       
+      
+### GET /checkLobby ###
+
+  Description: 
+  
+    Returns lobby object by key. It is used to check if the second player joined or the turn of a player.
+    
+  Request params:
+    
+    1. key - key of the Lobby ('code' field)
+    
+  Response:
+  
+    - Success: JSON: returns Lobby object
+    - Fail: JSON: {"ok": false, "err": [Error message]}
+    
+  Comments:
+  
+    - Requires player to be logged in.
+      
+
 
