@@ -171,5 +171,35 @@
   Comments:
   
     - Retreives all card instances from database
+    
+    
+### GET /newLobby ###
+
+  Description: 
+  
+    Creates new lobby with capacity of two players and returns it as JSON. Lobbies are the rooms with players. They are persistently stored and modified. 
+    
+  Request params:
+    
+    No param
+    
+  Response:
+  
+    - Success: JSON: {
+    "_id": {
+        "$oid": [Mongo assigned ID]
+    },
+    "p1": [Player One (creator of Lobby)],
+    "p2": [Second Player (initially low)],
+    "age": [Increments every turn of players],
+    "isFull": [True if both players are in],
+    "expectedMove": [Current turn],
+    "lastdata": [Exchange data - state of the decks],
+    "code": [Unique code of Lobby]}
+    - Fail: JSON: {"ok": false, "err": [Error message]}
+    
+  Comments:
+  
+    - Requires player to be logged in.
       
 
