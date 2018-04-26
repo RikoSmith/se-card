@@ -222,5 +222,27 @@
   
     - Requires player to be logged in.
       
+      
+      
+### POST /turn ###
+
+  Description: 
+  
+    Makes turn on a game.
+    
+  Request params:
+    
+    1. key - key of the Lobby ('code' field)
+    2. data - new state information of the board
+    
+  Response:
+  
+    - Success: JSON: {"ok": true, "message": [Error message]}
+    - Fail: JSON: {"ok": false, "err": [Error message]}
+    
+  Comments:
+  
+    - Requires player to be logged in and be in the corresponding lobby and be the turn of the player.
+      
 
 
