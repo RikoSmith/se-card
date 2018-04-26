@@ -5,10 +5,21 @@ import com.github.scribejava.apis.GoogleApi20;
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.oauth.OAuth20Service;
 import com.google.gson.JsonObject;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
+import com.se.cgapi.models.Lobby;
 import com.se.cgapi.services.CardServices;
+import com.se.cgapi.services.LobbyServices;
 import com.se.cgapi.services.UserServices;
+import com.se.cgapi.utils.RandomString;
+import org.bson.Document;
 
 import javax.annotation.Resource;
+import javax.print.Doc;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -22,7 +33,7 @@ import java.util.logging.Logger;
 
 @Path("/v1")
 @ApplicationPath("/api")
-public class Service extends Application{
+public class Service extends Application {
 
     @Context
     private HttpServletRequest httpRequest;
@@ -34,20 +45,27 @@ public class Service extends Application{
 
     private UserServices u = new UserServices();
     private CardServices c = new CardServices();
+    private LobbyServices l = new LobbyServices();
+
+    private final static RandomString gen = new RandomString();
+
+    private final MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://admin:Zxc123654@ds247007.mlab.com:47007/se-cardgame"));
+    private final MongoDatabase db = mongoClient.getDatabase("se-cardgame");
+    private MongoCollection LOBBIES = db.getCollection("lobby");
 
     //Test operation
     @GET
     @Path("/test")
     @Produces(MediaType.APPLICATION_JSON)
-    public String helloWorld(@Context HttpServletRequest req){
+    public String helloWorld(@Context HttpServletRequest req) {
 
-        JsonObject result = new JsonObject();
+        try {
+            Thread.sleep(30000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-
-        result.addProperty("ip", req.getRemoteAddr());
-
-
-        return result.toString();
+        return "Hahahahahahahahahahahahaha!";
     }
 
     ////////--USER SERVICES--////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,11 +74,12 @@ public class Service extends Application{
     @POST
     @Path("/login")
     @Produces(MediaType.APPLICATION_JSON)
-    public String login(@FormParam("username") String uname, @FormParam("pword") String password, @Context HttpServletRequest req){
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public String login(@FormParam("username") String uname, @FormParam("pword") String password, @Context HttpServletRequest req) {
         HttpSession session = req.getSession();
-        if(session.getAttribute("is_logged") != null){
+        if (session.getAttribute("is_logged") != null) {
             logger.info("SESSION_K: " + session.getAttribute("is_logged"));
-        }else {
+        } else {
             session.setAttribute("is_logged", 0);
         }
 
@@ -73,11 +92,11 @@ public class Service extends Application{
     /*@GET
     @Path("/login")
     @Produces(MediaType.APPLICATION_JSON)
-    public String login2(@QueryParam("username") String uname, @QueryParam("pword") String password, @Context HttpServletRequest req){
+    public String login2(@QueryParam("username") String uname, @QueryParam("pword") String password, @Context HttpServletRequest req) {
         HttpSession session = req.getSession();
-        if(session.getAttribute("is_logged") != null){
+        if (session.getAttribute("is_logged") != null) {
             logger.info("SESSION_K: " + session.getAttribute("is_logged"));
-        }else {
+        } else {
             session.setAttribute("is_logged", 0);
         }
 
@@ -89,7 +108,7 @@ public class Service extends Application{
     @GET
     @Path("/goauth")
     @Produces(MediaType.APPLICATION_JSON)
-    public String googleAuth(@Context HttpServletRequest req, @Context HttpServletResponse res){
+    public String googleAuth(@Context HttpServletRequest req, @Context HttpServletResponse res) {
 
 
         ServiceBuilder builder = new ServiceBuilder("");
@@ -100,13 +119,12 @@ public class Service extends Application{
         HttpSession sess = req.getSession();
 
         sess.setAttribute("goauth", service);
-        String url =  service.getAuthorizationUrl();
+        String url = service.getAuthorizationUrl();
 
 
-
-        try{
+        try {
             res.sendRedirect(url);
-        }catch (Exception e){
+        } catch (Exception e) {
             return e.getMessage();
         }
 
@@ -118,7 +136,7 @@ public class Service extends Application{
     @Path("/register")
     @Produces(MediaType.APPLICATION_JSON)
     public String signUpA(@FormParam("username") String uname, @FormParam("pass") String pass,
-                         @FormParam("name   ") String name, @FormParam("lastname") String lastname, @FormParam("email") String email){
+                          @FormParam("name   ") String name, @FormParam("lastname") String lastname, @FormParam("email") String email) {
 
         return u.signUp(uname, pass, name, lastname, email);
 
@@ -127,7 +145,7 @@ public class Service extends Application{
     @GET
     @Path("/searchEmail")
     @Produces(MediaType.APPLICATION_JSON)
-    public String searchEmail(@QueryParam("email") String email){
+    public String searchEmail(@QueryParam("email") String email) {
 
         return u.searchEmail(email);
 
@@ -136,7 +154,7 @@ public class Service extends Application{
     @GET
     @Path("/searchUsername")
     @Produces(MediaType.APPLICATION_JSON)
-    public String searchUsername(@QueryParam("uname") String uname){
+    public String searchUsername(@QueryParam("uname") String uname) {
 
         return u.searchUsername(uname);
 
@@ -145,7 +163,7 @@ public class Service extends Application{
     @GET
     @Path("/getActiveUsers")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getActUsers(){
+    public String getActUsers() {
 
         JsonObject result = new JsonObject();
         result.addProperty("ok", true);
@@ -159,7 +177,7 @@ public class Service extends Application{
     @GET
     @Path("/logout")
     @Produces(MediaType.APPLICATION_JSON)
-    public String logout(@Context HttpServletRequest req){
+    public String logout(@Context HttpServletRequest req) {
         HttpSession session = req.getSession();
 
         session.invalidate();
@@ -174,7 +192,7 @@ public class Service extends Application{
     @GET
     @Path("/getCard")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getCard(@QueryParam("id") String id){
+    public String getCard(@QueryParam("id") String id) {
         return c.getCard(id);
     }
 
@@ -182,8 +200,170 @@ public class Service extends Application{
     @GET
     @Path("/getAllCards")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAllCard(){
+    public String getAllCard() {
         return c.getAllCards();
+    }
+
+
+    ////////--LOBBY SERVICES--////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @GET
+    @Path("/newLobby")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String createLobby(@Context HttpServletRequest req) {
+        HttpSession sess = req.getSession();
+        if (sess.getAttribute("username") != null) {
+            Document lobby;
+            if (sess.getAttribute("lobby") != null) {
+                lobby = (Document) sess.getAttribute("lobby");
+            } else {
+                lobby = new Document();
+                lobby.append("p1", sess.getAttribute("username"));
+                lobby.append("p2", null);
+                lobby.append("age", 0);
+                lobby.append("isFull", false);
+                lobby.append("expectedMove", sess.getAttribute("username"));
+                lobby.append("lastdata", null);
+                lobby.append("code", gen.nextString());
+                LOBBIES.insertOne(lobby);
+            }
+            return lobby.toJson();
+        } else {
+            return "{\"ok\": false, \"err\":\"You are not looged in\"}";
+        }
+    }
+
+    @GET
+    @Path("/joinLobby")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String createLobby(@QueryParam("key") String key, @Context HttpServletRequest req) {
+        HttpSession sess = req.getSession();
+        Document query = new Document();
+        Document ress = new Document();
+        query.put("code", key);
+        FindIterable res = LOBBIES.find(query);
+        MongoCursor cursor = res.iterator();
+
+        if (!cursor.hasNext()) {
+            Document a = new Document();
+            a.append("ok", false);
+            a.append("err", "No such lobby!");
+            ress =  a;
+        } else {
+            if (sess.getAttribute("username") != null) {
+                Document lobby = (Document)cursor.next();
+                lobby.put("p2", (String)sess.getAttribute("username"));
+                lobby.put("isFull", true);
+                LOBBIES.replaceOne(query, lobby);
+                logger.info("JOINED_LOBBY: " + lobby.toJson().toString());
+                ress.append("ok", true);
+                ress.append("message", "You've successfully joined the lobby");
+            }else {
+                return "{\"ok\": false, \"err\":\"You are not looged in\"}";
+            }
+        }
+
+        return ress.toJson();
+    }
+
+    @GET
+    @Path("/checkLobby")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String checkLobby(@QueryParam("key") String key, @Context HttpServletRequest req) {
+        HttpSession sess = req.getSession();
+        Document query = new Document();
+        Document ress = new Document();
+        query.put("code", key);
+        FindIterable res = LOBBIES.find(query);
+        MongoCursor cursor = res.iterator();
+
+        if (!cursor.hasNext()) {
+            Document a = new Document();
+            a.append("ok", false);
+            a.append("err", "No such lobby!");
+            ress =  a;
+        } else {
+            if (sess.getAttribute("username") != null) {
+                Document lobby = (Document)cursor.next();
+                String reqName = (String)sess.getAttribute("username");
+                if(lobby.getString("p1").equals(reqName) || lobby.getString("p2").equals(reqName)){
+                    if(lobby.getString("p2") != null){
+                        ress = new Document();
+                        ress.append("ok", true);
+                        ress.append("lobby", lobby);
+                    }else{
+                        ress.append("ok", true);
+                        ress.append("lobby", lobby);
+                    }
+                }else {
+                    ress = new Document();
+                    ress.append("ok", false);
+                    ress.append("err", "You are not in this lobby!");
+                }
+            }else {
+                return "{\"ok\": false, \"err\":\"You are not looged in\"}";
+            }
+        }
+        return ress.toJson();
+    }
+
+
+
+    @POST
+    @Path("/turn")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public String postState(@FormParam("key") String key, @FormParam("data") String data, @Context HttpServletRequest req) {
+        HttpSession sess = req.getSession();
+        Document query = new Document();
+        Document ress = new Document();
+        query.put("code", key);
+        FindIterable res = LOBBIES.find(query);
+        MongoCursor cursor = res.iterator();
+
+        if (!cursor.hasNext()) {
+            Document a = new Document();
+            a.append("ok", false);
+            a.append("err", "No such lobby!");
+            ress =  a;
+        } else {
+            if (sess.getAttribute("username") != null) {
+                Document lobby = (Document)cursor.next();
+                String reqName = (String)sess.getAttribute("username");
+
+                if(lobby.getString("p1").equals(reqName) || lobby.getString("p2").equals(reqName)){
+                    if(reqName.equals(lobby.getString("expectedMove"))){
+                        lobby.put("lastdata", data);
+                        String nextMove;
+                        if(lobby.getString("p1").equals(reqName)){
+                            nextMove = lobby.getString("p2");
+                        }else {
+                            nextMove = lobby.getString("p1");
+                        }
+                        lobby.put("expectedMove", nextMove);
+                        LOBBIES.replaceOne(query, lobby);
+                        ress = new Document();
+                        ress.append("ok", true);
+                        ress.append("message", "Successful turn!");
+                    }else{
+                        ress = new Document();
+                        ress.append("ok", false);
+                        ress.append("err", "It's not your turn!");
+                    }
+                }else {
+                    ress = new Document();
+                    ress.append("ok", false);
+                    ress.append("err", "You are not in this lobby!");
+                }
+
+
+            }else {
+                return "{\"ok\": false, \"err\":\"You are not looged in\"}";
+            }
+
+        }
+
+        return ress.toJson();
     }
 
 

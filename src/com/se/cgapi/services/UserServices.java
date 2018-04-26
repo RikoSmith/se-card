@@ -68,6 +68,7 @@ public class UserServices {
                         logger.info(activeUsers.toString());
                         result.addProperty("sessKey", key);
                         sess.setAttribute("is_logged", 1);
+                        sess.setAttribute("username", n);
                     } else {
                         result.addProperty("ok", false);
                         result.addProperty("err", "Incorrect password.");
@@ -161,8 +162,8 @@ public class UserServices {
         }else {
             result.addProperty("ok", true);
             Document jo = (Document)cursor.next();
-            String em = (String)jo.get("email");
-            result.addProperty("email", em);
+            String em = (String)jo.get("username");
+            result.addProperty("username", em);
         }
 
         return result.toString();
