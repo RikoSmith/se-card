@@ -135,8 +135,9 @@ public class Service extends Application {
     @POST
     @Path("/register")
     @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public String signUpA(@FormParam("username") String uname, @FormParam("pass") String pass,
-                          @FormParam("name   ") String name, @FormParam("lastname") String lastname, @FormParam("email") String email) {
+                          @FormParam("name") String name, @FormParam("lastname") String lastname, @FormParam("email") String email) {
 
         return u.signUp(uname, pass, name, lastname, email);
 

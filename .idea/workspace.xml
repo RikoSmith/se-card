@@ -7,28 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a7a3b43-64ec-452a-85e7-74a405b6dad7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/se/cgapi/services/LobbyServices.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war/se-card_war.war" afterPath="$PROJECT_DIR$/out/artifacts/se_card_war/se-card_war.war" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/Action.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/GameBoard.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/RandomString.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/Service.class" afterPath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/Service.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/_SessionPair.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/services/CardServices.class" afterPath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/services/CardServices.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/services/UserServices.class" afterPath="$PROJECT_DIR$/out/artifacts/se_card_war_exploded/WEB-INF/classes/com/se/cgapi/services/UserServices.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/Action.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/GameBoard.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/RandomString.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/Service.class" afterPath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/Service.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/_SessionPair.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/services/CardServices.class" afterPath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/services/CardServices.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/services/UserServices.class" afterPath="$PROJECT_DIR$/out/production/se-card/com/se/cgapi/services/UserServices.class" />
       <change beforePath="$PROJECT_DIR$/src/com/se/cgapi/Service.java" afterPath="$PROJECT_DIR$/src/com/se/cgapi/Service.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/se/cgapi/models/GameBoard.java" afterPath="$PROJECT_DIR$/src/com/se/cgapi/models/Lobby.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/se/cgapi/services/UserServices.java" afterPath="$PROJECT_DIR$/src/com/se/cgapi/services/UserServices.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,14 +23,14 @@
       <file leaf-file-name="Service.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="259" column="36" lean-forward="false" selection-start-line="259" selection-start-column="36" selection-end-line="259" selection-end-column="36" />
+            <state relative-caret-position="338">
+              <caret line="141" column="60" lean-forward="true" selection-start-line="141" selection-start-column="60" selection-end-line="141" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6153#6154#0" expanded="true" />
-                <element signature="e#6189#6190#0" expanded="true" />
-                <element signature="e#6301#6302#0" expanded="true" />
-                <element signature="e#6339#6340#0" expanded="true" />
+                <element signature="e#6203#6204#0" expanded="true" />
+                <element signature="e#6239#6240#0" expanded="true" />
+                <element signature="e#6351#6352#0" expanded="true" />
+                <element signature="e#6389#6390#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,8 +110,8 @@
       <file leaf-file-name="UserServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/services/UserServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="61" column="39" lean-forward="false" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+            <state relative-caret-position="356">
+              <caret line="102" column="37" lean-forward="false" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1254#1255#0" expanded="true" />
@@ -270,6 +250,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,8 +286,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -614,7 +594,8 @@
       <workItem from="1523995452011" duration="10006000" />
       <workItem from="1524033592977" duration="825000" />
       <workItem from="1524749561660" duration="5439000" />
-      <workItem from="1524758195434" duration="7884000" />
+      <workItem from="1524758195434" duration="8068000" />
+      <workItem from="1524810265396" duration="1295000" />
     </task>
     <task id="LOCAL-00001" summary="Added search (helper) methods for auth">
       <created>1518346662924</created>
@@ -655,10 +636,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90781000" />
+    <option name="totallyTimeSpent" value="92260000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="91" y="-5" width="1829" height="1085" extended-state="6" />
+    <frame x="300" y="52" width="1831" height="1089" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -738,10 +719,10 @@
           <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6153#6154#0" expanded="true" />
-            <element signature="e#6189#6190#0" expanded="true" />
-            <element signature="e#6301#6302#0" expanded="true" />
-            <element signature="e#6339#6340#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
+            <element signature="e#6239#6240#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6389#6390#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -759,10 +740,10 @@
           <caret line="42" column="44" lean-forward="false" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6153#6154#0" expanded="true" />
-            <element signature="e#6189#6190#0" expanded="true" />
-            <element signature="e#6301#6302#0" expanded="true" />
-            <element signature="e#6339#6340#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
+            <element signature="e#6239#6240#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6389#6390#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -797,10 +778,10 @@
           <caret line="42" column="44" lean-forward="false" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6153#6154#0" expanded="true" />
-            <element signature="e#6189#6190#0" expanded="true" />
-            <element signature="e#6301#6302#0" expanded="true" />
-            <element signature="e#6339#6340#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
+            <element signature="e#6239#6240#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6389#6390#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -834,10 +815,10 @@
           <caret line="42" column="44" lean-forward="false" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6153#6154#0" expanded="true" />
-            <element signature="e#6189#6190#0" expanded="true" />
-            <element signature="e#6301#6302#0" expanded="true" />
-            <element signature="e#6339#6340#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
+            <element signature="e#6239#6240#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6389#6390#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -886,10 +867,10 @@
           <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6153#6154#0" expanded="true" />
-            <element signature="e#6189#6190#0" expanded="true" />
-            <element signature="e#6301#6302#0" expanded="true" />
-            <element signature="e#6339#6340#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
+            <element signature="e#6239#6240#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6389#6390#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -908,10 +889,10 @@
           <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6153#6154#0" expanded="true" />
-            <element signature="e#6189#6190#0" expanded="true" />
-            <element signature="e#6301#6302#0" expanded="true" />
-            <element signature="e#6339#6340#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
+            <element signature="e#6239#6240#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6389#6390#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -943,10 +924,10 @@
           <caret line="34" column="40" lean-forward="true" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6153#6154#0" expanded="true" />
-            <element signature="e#6189#6190#0" expanded="true" />
-            <element signature="e#6301#6302#0" expanded="true" />
-            <element signature="e#6339#6340#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
+            <element signature="e#6239#6240#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6389#6390#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -979,10 +960,10 @@
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6153#6154#0" expanded="true" />
-            <element signature="e#6189#6190#0" expanded="true" />
-            <element signature="e#6301#6302#0" expanded="true" />
-            <element signature="e#6339#6340#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
+            <element signature="e#6239#6240#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6389#6390#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1080,6 +1061,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/services/LobbyServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/services/CardServices.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -1098,20 +1089,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/services/LobbyServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/services/UserServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="61" column="39" lean-forward="false" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+        <state relative-caret-position="356">
+          <caret line="102" column="37" lean-forward="false" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1254#1255#0" expanded="true" />
@@ -1124,14 +1105,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/se/cgapi/Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="259" column="36" lean-forward="false" selection-start-line="259" selection-start-column="36" selection-end-line="259" selection-end-column="36" />
+        <state relative-caret-position="338">
+          <caret line="141" column="60" lean-forward="true" selection-start-line="141" selection-start-column="60" selection-end-line="141" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6153#6154#0" expanded="true" />
-            <element signature="e#6189#6190#0" expanded="true" />
-            <element signature="e#6301#6302#0" expanded="true" />
-            <element signature="e#6339#6340#0" expanded="true" />
+            <element signature="e#6203#6204#0" expanded="true" />
+            <element signature="e#6239#6240#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6389#6390#0" expanded="true" />
           </folding>
         </state>
       </provider>
